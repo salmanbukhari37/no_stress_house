@@ -1,0 +1,343 @@
+*, a, img, ul, ol {
+    font-family: 'Open Sans', sans-serif;
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+header {
+    background: #324f9c;
+    padding: 40px 0 0;
+    box-sizing: border-box;
+}
+header .logoCrcl {
+    max-width: 431px;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+}
+header .logoCrcl figure {
+    min-width: 431px;
+    min-height: 491px;
+    background: url(../img/Crcl.png) no-repeat 0 0;
+    background-size: cover;
+    text-align: center;
+    padding: 47% 0 0;
+}
+header .logoCrcl figure img {
+    max-width: 210px;
+    margin: 0 0 0 -5%;
+}
+header .homeMenu {
+    display: inline-block;
+    margin: 0 0 0 -35px;
+}
+header .homeMenu ul li {
+    font-size: 13px;
+    margin: 10px 0 33px -35px;
+    text-transform: uppercase;
+    position: relative;
+}
+header .homeMenu ul li:before {
+    border: 4px solid #ff2e2c;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -100px;
+    width: 40px;
+    height: 40px;
+    background: #dde9f1;
+    border-radius: 50%;
+    box-shadow: 1px 3px 5px #828282;
+}
+header .homeMenu ul li:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 6px;
+    left: -94px;
+    width: 28px;
+    height: 28px;
+    background: #dbd2cf;
+    border: 1px solid #8a9390;
+    border-radius: 50%;
+}
+header .homeMenu ul li a {
+    display: inline-block;
+    color: #e9eaf2;
+    position: relative;
+    text-shadow: 1px 1px 0 #000;
+    font-size: 15px;
+    font-weight: 600;
+}
+header .homeMenu ul li.sprtCls {
+    margin-left: 70px;	
+}
+header .homeMenu ul li.helpCls {
+    margin-left: 108px;
+	margin-top: 70px;
+}
+header .homeMenu ul li.patCls {
+    margin-left: 108px;	
+}
+header .homeMenu ul li.wkCls {
+	margin-left: 78px;
+	margin-top: -42px;
+}
+header .homeMenu ul li.cntctCls {
+    margin-left: -2px;
+}
+header .homeMenu ul li a:before {
+    background: #ff2e2c;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: -53px;
+    width: 45px;
+    height: 2px;
+}
+header .homeMenu ul li.sprtCls:before {
+    border: 4px solid #911ebe;
+}
+header .homeMenu ul li.sprtCls a:before {
+    background: #911ebe;
+}
+header .homeMenu ul li.helpCls:before {
+    border: 4px solid #911ebe;
+}
+header .homeMenu ul li.helpCls a:before {
+    background: #911ebe;
+}
+header .homeMenu ul li.patCls:before {
+    border: 4px solid #1457f1;
+}
+header .homeMenu ul li.patCls a:before {
+    background: #1457f1;
+}
+header .homeMenu ul li.wkCls:before {
+    border: 4px solid #009a72;
+}
+header .homeMenu ul li.wkCls a:before {
+    background: #009a72;
+}
+header .homeMenu ul li.cntctCls:before {
+    border: 4px solid #2ac80b;
+}
+header .homeMenu ul li.cntctCls a:before {
+    background: #2ac80b;
+}
+header .homeMenu ul li:hover:before {
+    box-shadow: 0 0 6px 2px #fff;
+}
+header .topText {
+    margin: 50% 0 0 0;
+}
+header .topText h4 {
+    color: #fff;
+    margin: 0;
+    font-size: 32px;
+    line-height: 41px;
+    letter-spacing: 2px;
+    text-align: justify;
+    text-shadow: 1px 2px 0 #000;
+}
+header .topText h4 strong {
+    display: block;
+}
+header .topText h4 small {
+    font-size: 21px;
+    color: #fff;
+    margin: 0;
+}
+section.intro-video {
+    padding: 40px 0;
+    box-sizing: border-box;
+}
+section.frm-sec {
+    padding: 40px 0;
+    box-sizing: border-box;
+background: #324f9c;
+    color: #fff;
+    
+}
+section.cash-sec {
+    padding: 40px 0;
+    box-sizing: border-box;
+background: #324f9c;
+    color: #fff;
+}
+section.land-sec {
+    padding: 40px 0;
+    box-sizing: border-box;
+   
+}
+section.seller-sec {
+    padding: 40px 0;
+    box-sizing: border-box;
+ background: #324f9c;
+    color: #ffffff;
+}
+section.tenant-sec {
+    padding: 40px 0;
+    box-sizing: border-box;
+    
+}
+section.outro-video {
+    padding: 40px 0;
+    box-sizing: border-box;
+
+}
+section.help-sec {
+    padding: 40px 0;
+    box-sizing: border-box;
+	/*background: #324f9c;
+    color: #fff;*/
+    
+}
+
+footer {
+    background: gray;
+    padding: 40px 0;
+    box-sizing: border-box;
+}
+.ftr-txt {
+    float: left;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+}
+.titl {
+    width: 100%;
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.btn-default {
+   font-weight: 700;
+}
+header .homeMenu ul li.patCls {
+
+    margin-left: 108px;
+    visibility: hidden;
+
+}
+.video-intro {
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+.video-outro {
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+.homeMenu ul li a img {
+	width: 50px !important;
+	height: 50px !important;
+}
+
+@media(max-width:767px)
+{
+	header .logoCrcl {
+		max-width: 100%;
+		display: block;
+		max-width: 290px;
+		margin: 0 auto;
+	}
+	header .homeMenu ul li {
+		margin: 15px 0 0 0 !important;
+		width: 49%;
+		display: inline-block;
+		vertical-align: top;
+	}
+	header	 .logoCrcl figure {
+		min-width: 100%;
+		min-height: inherit;
+		background: 
+		#fff;
+		padding: 5px;
+		border-radius: 10px;
+	}
+	.homeMenu ul{
+		text-align:center;
+	}
+	header .homeMenu ul li::before {
+		display: none;
+	}
+	header .homeMenu ul li::after {
+		display: none;
+	}
+	header .homeMenu ul li a::before {
+		display: none;
+	}
+	header .homeMenu ul li.patCls {
+		display: none;
+	}
+	header .homeMenu {
+		margin: 0;
+		display:block;
+	}
+	header{
+		padding-bottom:40px;
+	}
+}
+
+@media(min-width:768px) and (max-width:1199px)
+{
+	.col-sm-2.mh {
+		display: none;
+	}
+	.col-sm-8.ms {
+		width: 100%;
+	}
+}
+.whatsapp-btn{
+    font-size:24px;
+    padding: 5px 15px 5px 15px;
+    background: #46C355;
+    color: #fff;
+}
+.facebook-btn{
+    font-size:24px;
+    padding: 5px 20px 5px 15px;
+    background: #5B7EC6;
+    color: #fff;
+}
+.skype-btn{
+    font-size:24px;
+    padding: 5px 15px 5px 15px;
+    background: #01A9E9;
+    color: #fff;
+}
+
+section.help-sec span::before {
+	content: "\2713";
+	margin-right: 0.8rem;
+	color: #ffffff;
+	text-align:center;
+   display: inline-block;
+   width: 20px;
+   height: 20px;
+   -moz-border-radius: 10px;
+   -webkit-border-radius: 10px;
+   border-radius: 10px;
+   background-color: #052e73;
+   padding-bottom: 0.8rem;
+   
+}
+
+section.help-sec span::after {
+  content: "\A";
+      white-space: pre;
+}
+.help-text {
+    border: 0px;
+	font-weight: 700;
+}
