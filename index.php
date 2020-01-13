@@ -451,68 +451,48 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Calculator</h4>
+                    <h4 class="modal-title">TVM Calculator</h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="frm-em">
-                                <form name="TVMCalc">
-                                    <div class="form-group">
-                                        <label for="loanAmount">Loan Amount:</label>
-                                        <input 
-                                            class="form-control" 
-                                            maxlength="8" 
-                                            name="PVInput" 
-                                            size="8" 
-                                            type="Number" />
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="interestRate">Interest Rate:</label>
-                                        <input 
-                                            class="form-control"
-                                            maxlength="8" 
-                                            name="NRInput" 
-                                            size="8" 
-                                            type="Number" />
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="monthlyPayment">Monthly Payment:</label>
-                                        <input 
-                                            class="form-control" 
-                                            maxlength="8" 
-                                            name="PMTInput" 
-                                            size="8" 
-                                            type="Number" />
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="numberOfPayment">Number of Payments:</label>
-                                        <input 
-                                            class="form-control" 
-                                            maxlength="8" 
-                                            name="NPInput" 
-                                            size="8" 
-                                            type="Number" />
-                                        <input 
+                            <form name="TVMCalc">
+                                <div class="form-group">
+                                    <label for="loanAmount">Loan Amount:</label>
+                                    <input class="form-control" maxlength="8" name="PVInput" size="8" type="text" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="interestRate">Interest Rate:</label>
+                                    <input class="form-control" maxlength="8" name="NRInput" size="8" type="text" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="monthlyPayment">Monthly Payment:</label>
+                                    <input class="form-control" maxlength="8" name="PMTInput" size="8" type="text" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="numberOfPayment">Number of Payments:</label>
+                                    <input class="form-control" maxlength="8" name="NPInput" size="8" type="text" />
+                                    <input 
                                             maxlength="8" 
                                             name="FVInput" 
                                             size="8" 
                                             type="hidden" />
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="interestCompounds">How often interest compounds:</label>
-                                        <select class="form-control" name="CInput">
-                                            <option selected="selected" value="3">Monthly</option>
-                                            <option value="4">Weekly</option>
-                                            <option value="5">Daily</option> 
-                                        </select>
-                                    </div>
-                                    <div class="text-center">
-                                        <input class="btn btn-success" name="PV" onclick="findPV(this.form)" type="button" value="  Loan Amount   " /> 
-                                        <input class="btn btn-info" name="PV" onclick="findPMT(this.form)" type="button" value="  Monthly Payment  " /> 
-                                        <input class="btn btn-warning" name="PV" onclick="findNR(this.form)" type="button" value="  Interest Rate " /> 
-                                        <input class="btn btn-primary" name="PV" onclick="findNP(this.form)" type="button" value="Number of Payments" />
-                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="interestCompounds">How often interest compounds:</label>
+                                    <select class="form-control" name="CInput">
+                                        <option selected="selected" value="3">Monthly</option>
+                                        <option value="4">Weekly</option>
+                                        <option value="5">Daily</option> 
+                                    </select>
+                                </div>
+                                <div class="text-center">
+                                    <input class="btn btn-success" name="PV" onclick="findPV(this.form)" type="button" value="  Loan Amount   " /> 
+                                    <input class="btn btn-info" name="PV" onclick="findPMT(this.form)" type="button" value="  Monthly Payment  " /> 
+                                    <input class="btn btn-warning" name="PV" onclick="findNR(this.form)" type="button" value="  Interest Rate " /> 
+                                    <input class="btn btn-primary" name="PV" onclick="findNP(this.form)" type="button" value="Number of Payments" /></td>
+                                </div>
                                 </form>
                             </div>
                         </div>
