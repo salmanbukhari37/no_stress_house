@@ -482,6 +482,64 @@ function isNumber(inputStr) {
   return true;
 }
 
+function isPositiveNumber(inputStr) {
+  var decFlag = false;
+  if (inputStr == ".") {
+    alert("Please make sure that only numbers are input.");
+    return false;
+  }
+  for (var i = 0; i < inputStr.length; i++) {
+    var oneChar = inputStr.substring(i, i + 1);
+    if (
+      (oneChar >= "0" && oneChar <= "9") ||
+      (oneChar == "." && decFlag == false)
+    ) {
+    } else {
+      alert("Please make sure that only numbers are input.");
+      return false;
+    }
+    if (oneChar == ".") {
+      decFlag = true;
+    }
+  }
+  return true;
+}
+
+function isNumber(inputStr) {
+  var decFlag = false;
+  if (inputStr == ".") {
+    alert("Please make sure that only numbers are input.");
+    return false;
+  }
+  for (var i = 0; i < inputStr.length; i++) {
+    var oneChar = inputStr.substring(i, i + 1);
+    if (i == 0 && inputStr.length > 1) {
+      if (
+        (oneChar >= "0" && oneChar <= "9") ||
+        (oneChar == "." && decFlag == false) ||
+        oneChar == "-"
+      ) {
+      } else {
+        alert("Please make sure that only numbers are input.");
+        return false;
+      }
+    } else {
+      if (
+        (oneChar >= "0" && oneChar <= "9") ||
+        (oneChar == "." && decFlag == false)
+      ) {
+      } else {
+        alert("Please make sure that only numbers are input.");
+        return false;
+      }
+    }
+    if (oneChar == ".") {
+      decFlag = true;
+    }
+  }
+  return true;
+}
+
 function launchTVMCalc() {
   window.open(
     "TVMCalcWindow.html",
