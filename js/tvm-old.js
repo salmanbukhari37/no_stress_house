@@ -27,22 +27,14 @@ function calcPMT(inPV, inFV, inNR, inNP, inC) {
 		outPMT = (inPV - inFV*Math.pow(1+(inNR/(100*inC)),-inNP))/((1 - Math.pow(1+(inNR/(100*inC)),-inNP))/(inNR/(100*inC)));
 		if (inFV != 0) {
 			outPMT *= -1;
-        }		 
-        Swal.fire({
-            title: "Monthly Payment",
-            text: outPMT.toFixed(2)
-        });
+		}		 
 	} else if ((inNR == 0) && (inNP > 0)) {
 		outPMT = (inPV - inFV)/inNP;
 		if (inFV != 0) {
 			outPMT *= -1;
-        }		 
-        Swal.fire({
-            title: "Monthly Payment",
-            text: outPMT.toFixed(2)
-        });
+		}		 
 	} else {
-		alert("The Number of Payments must be greater than 0.");
+		alert("The number of periods must be greater than 0.");
 		outPMT = "";
 	}
 	return outPMT;
@@ -57,7 +49,7 @@ function calcNR(inPMT, inPV, inFV, inNP, inC) {
 	var lastNR = outNR;
 	//alert("PV " + inPV + " PMT " + inPMT + " FV " + inFV + " NP " + inNP);
 	if (inNP <= 0) { // should throw an exception
-		alert("The Interest rate can not be computed.");
+		alert("The Nominal Rate cannot be computed.");
 		return outNR = "";
 	}
 	if (inFV == 0) {
@@ -71,15 +63,15 @@ function calcNR(inPMT, inPV, inFV, inNP, inC) {
 		// inFV *= -1;
 	}
 	if (theZeros >= 2) { // should throw an exception
-		alert("The Interest rate can not be computed.");
+		alert("The Nominal Rate cannot be computed.");
 		return outNR = "";
 	}
 	if ((inPV > 0) && (inPMT >= 0) && (inFV >= 0)) {
-		alert("The Interest rate can not be computed.");
+		alert("The Nominal Rate cannot be computed.");
 		return outNR = "";
 	}
 	if ((inPV == 0) && (inPMT >= 0) && (inFV >= 0)) {
-		alert("The Interest rate can not be computed.");
+		alert("The Nominal Rate cannot be computed.");
 		return outNR = "";
 	}
 	inPV *= -1;
@@ -96,7 +88,7 @@ function calcNR(inPMT, inPV, inFV, inNP, inC) {
 		lastNR = outNR;
 		outNR = outNR - thePV1/theDeriv;
 		if (i > 200) { // should throw an exception
-			alert("The Interest rate can not be computed.");
+			alert("The Nominal Rate cannot be computed.");
 			return outNR = "";
 		}
 		i++;
@@ -114,7 +106,7 @@ function calcNP(inPMT, inPV, inFV, inNR, inC) {
 	var	theZeros = 0;
 	
 	if (inNR <= 0) { // should throw an exception
-		alert("The Number of Payments cannot be computed.");
+		alert("The Number of Periods cannot be computed.");
 		return outNP = "";
 	}
 	if (inFV == 0) {
@@ -127,20 +119,20 @@ function calcNP(inPMT, inPV, inFV, inNR, inC) {
 		theZeros++;
 	}
 	if (theZeros >= 2) { // should throw an exception
-		alert("The Number of Payments cannot be computed.");
+		alert("The Number of Periods cannot be computed.");
 		return outNP = "";
 	}
 	if ((inPV > 0) && (inPMT >= 0) && (inFV >= 0)) {
-		alert("The Number of Payments cannot be computed.");
+		alert("The Number of Periodscannot be computed.");
 		return outNP = "";
 	}
 	if ((inPV == 0) && (inPMT >= 0) && (inFV >= 0)) {
-		alert("The Number of Payments cannot be computed.");
+		alert("The Number of Periods cannot be computed.");
 		return outNP = "";
 	}
 	inPV *= -1;
 	if ((inPV == inFV) && ((inNR/(100*inC))*inFV == inPMT)) { // should throw an exception
-		alert("The Number of Payments is not unique.");
+		alert("The Number of Periods is not unique.");
 		return outNP = "";// outNP can be any number
 	}
 	do {
@@ -153,7 +145,7 @@ function calcNP(inPMT, inPV, inFV, inNR, inC) {
 		lastNP = outNP;
 		outNP = outNP - thePV1/theDeriv;
 		if (i > 200) { // should throw an exception
-			alert("The Number of Payments cannot be computed.");
+			alert("The Number of Periods cannot be computed.");
 			return outNP = "";
 		}
 		i++;
@@ -183,8 +175,14 @@ function findPV(form) {
  	}
  	if (theNR == "") theNR = 0;
  	var theC;
- 	var theCompounding = $('select[name="CInput"]').find(":selected").val();
- 	if (theCompounding == 3) {
+ 	var theCompounding = form.CInput.selectedIndex;
+ 	if (theCompounding == 0) {
+ 		theC = 1;
+ 	} else if (theCompounding == 1) {
+ 		theC = 2;
+ 	} else if (theCompounding == 2) {
+ 		theC = 4;
+ 	} else if (theCompounding == 3) {
  		theC = 12;
  	} else if (theCompounding == 4) {
  		theC = 52;
@@ -218,11 +216,14 @@ function findPMT(form) {
  	}
  	if (theNR == "") theNR = 0;
  	var theC;
-    var theCompounding = $('select[name="CInput"]').find(":selected").val();
-     
-    console.log(theCompounding);
-     
-    if (theCompounding == 3) {
+ 	var theCompounding = form.CInput.selectedIndex;
+ 	if (theCompounding == 0) {
+ 		theC = 1;
+ 	} else if (theCompounding == 1) {
+ 		theC = 2;
+ 	} else if (theCompounding == 2) {
+ 		theC = 4;
+ 	} else if (theCompounding == 3) {
  		theC = 12;
  	} else if (theCompounding == 4) {
  		theC = 52;
@@ -260,8 +261,14 @@ function findFV(form) {
  	}
  	if (theNR == "") theNR = 0;
  	var theC;
- 	var theCompounding = $('select[name="CInput"]').find(":selected").val();
- 	if (theCompounding == 3) {
+ 	var theCompounding = form.CInput.selectedIndex;
+ 	if (theCompounding == 0) {
+ 		theC = 1;
+ 	} else if (theCompounding == 1) {
+ 		theC = 2;
+ 	} else if (theCompounding == 2) {
+ 		theC = 4;
+ 	} else if (theCompounding == 3) {
  		theC = 12;
  	} else if (theCompounding == 4) {
  		theC = 52;
@@ -295,8 +302,14 @@ function findFV(form) {
  	}
  	if (thePV == "") thePV = 0;
  	var theC;
- 	var theCompounding = $('select[name="CInput"]').find(":selected").val();
- 	if (theCompounding == 3) {
+ 	var theCompounding = form.CInput.selectedIndex;
+ 	if (theCompounding == 0) {
+ 		theC = 1;
+ 	} else if (theCompounding == 1) {
+ 		theC = 2;
+ 	} else if (theCompounding == 2) {
+ 		theC = 4;
+ 	} else if (theCompounding == 3) {
  		theC = 12;
  	} else if (theCompounding == 4) {
  		theC = 52;
@@ -334,8 +347,14 @@ function findNP(form) {
  	}
  	if (thePV == "") thePV = 0;
  	var theC;
- 	var theCompounding = $('select[name="CInput"]').find(":selected").val();
- 	if (theCompounding == 3) {
+ 	var theCompounding = form.CInput.selectedIndex;
+ 	if (theCompounding == 0) {
+ 		theC = 1;
+ 	} else if (theCompounding == 1) {
+ 		theC = 2;
+ 	} else if (theCompounding == 2) {
+ 		theC = 4;
+ 	} else if (theCompounding == 3) {
  		theC = 12;
  	} else if (theCompounding == 4) {
  		theC = 52;

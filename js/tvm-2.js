@@ -373,7 +373,6 @@ function findNR(form) {
   } else if (theCompounding == 5) {
     theC = 365;
   }
-
   var theNR = calcNR(thePMT, thePV, theFV, theNP, theC);
   if (theNR == "") {
     form.NRInput.value = "";

@@ -348,3 +348,10 @@ section.help-sec span::after {
 .mt-3 {
   margin-top: 30px;
 }
+
+@media all and (max-width: 600px) {
+  .custom-class {
+    width: 100%;
+    display: block;
+  }
+}
